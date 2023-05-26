@@ -1,16 +1,13 @@
 #!/usr/bin/python3
-"""Module containing the function write_file"""
+"""Module containing the function read_file"""
 
 
-def write_file(filename="", text=""):
-    """Writes a string to a text file (UTF8) and returns the number
-    of characters written.
+def read_file(filename=""):
+    """Reads a file and prints to stdout.
+
     Args:
-        filename (str, optional): name of the file. Defaults to "".
-        text (str, optional): string of text to write to file. Defaults to "".
-    Returns:
-        int: number of characters written to file.
+        filename (str, optional): name of file to read. Defaults to "".
     """
-    with open(filename, 'w', encoding="utf-8") as f:
-        """This method returns the number of characters written to a file."""
-        return f.write(text)
+    with open(filename, 'r', encoding="utf-8") as f:
+        read_data = f.read()
+        print(read_data, end='')
